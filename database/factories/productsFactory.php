@@ -1,0 +1,19 @@
+<?php
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+
+use App\Product;
+use Faker\Generator as Faker;
+
+$factory->define(Product::class, function (Faker $faker) {
+    return [
+        'code'=> $faker->word.$faker->numberBetween($min=1000,$max=9999),
+        'name'=>$faker->word,
+        'description'=>$faker->text($maxNbChars = 250),
+        'short_description'=>$faker->text($maxNbChars = 50),
+        'type'=>$faker->text($maxNbChars = 10),
+        'status'=>$faker->text($maxNbChars = 15),
+        'regular_price'=>$faker->randomFloat($nbMaxDecimals=2,$min=0,$max=99999),
+        'sale_price'=>$faker->randomFloat($nbMaxDecimals=2,$min=0,$max=99999),
+    ];
+});
