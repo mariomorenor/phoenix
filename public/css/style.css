@@ -1,0 +1,13 @@
+.txtlogin{
+        width: 100%;
+        padding: 12px 20px;
+        margin: 7px 0;
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 1px solid black;
+}
+
+#Img_logo{
+    width: 20rem;
+
+}
