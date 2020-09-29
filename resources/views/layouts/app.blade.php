@@ -45,7 +45,7 @@
                             <a class="nav-link" href="#">Ventas <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Inventario <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{{ route('producto.index') }}">Inventario <span class="sr-only">(current)</span></a>
                         </li>
                         @endauth
                     </ul>
