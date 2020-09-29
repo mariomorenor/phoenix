@@ -1,0 +1,16 @@
+:root{
+    --primary: #111854;
+    --ligth: #ffffff;
+    --ligth-blue: #111854;
+    --grey: #efefef;
+}
+
+#sidebar-container{
+    min-height: 100vh;
+    position: fixed;
+}
+
+#sidebar-container .menu_acciones{
+    width: 18rem;
+}
+

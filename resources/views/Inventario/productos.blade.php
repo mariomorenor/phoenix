@@ -1,7 +1,9 @@
 @extends('layouts.app')
+@push('css')
+    <link rel="stylesheet" href="{{ asset('css/inventario-style.css') }}">
+@endpush
 
 @section('content')
-<div class="container">
-    
-</div>
+
+<x-sidebar_components/>
 @endsection
