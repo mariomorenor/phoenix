@@ -1,4 +1,115 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Sunflower';
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body{
+    background: #000;
+    Color: #000000;
+}
+
+.container{
+    padding: 0 20px;
+}
+
+.sub-container{
+    max-width: 700px;
+    width: 100%;
+    height: 300px;
+    margin: 150px auto 0;
+    display: flex;
+    background: #000;
+    box-shadow: 0 0 5px 2px;
+}
+
+.sub-container .banner-img{
+    width: 300px;
+    height: 100%;
+}
+.sub-container .banner-img img{
+    width: 100%;
+    height: 100%;
+}
+
+.sub-container .login-form{
+    width: 400px;
+    height: 100%;
+    text-align: center;
+    padding: 40px 35px 0;
+    position: relative;
+}
+
+.sub-container .login-form .title{
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.sub-container .login-form .input{
+    margin: 5px 0 15px;
+    width: 75%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.sub-container .btn{
+    position: relative;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+@media screen and (max-width: 500px){
+    .sub-container{
+        flex-direction: column;
+        max-width: 300px;
+        height: auto;
+        margin-top: 50px;
+    }
+
+    .sub-container .banner-img{
+        width: 100%;
+        height: 220px;
+    }
+
+    .sub-container .login-form{
+        width: 100%;
+        padding: 20px 35px 0;
+    }
+
+    .sub-container .login-form .title{
+        font-size: 24px;
+        margin-bottom: 20px;        
+    }
+
+    .sub-container .login-form .input{
+        margin-bottom: 10px;
+    }
+    .sub-container .btn{
+        margin-top: 20px;
+        padding: 10px;
+    }
+}
+
+
+
+/*
+.posicion{
+    position: relative;
+}
 .txtlogin{
+        position: absolute;
         width: 100%;
         padding: 12px 20px;
         margin: 7px 0;
@@ -8,5 +119,7 @@
 }
 
 #Img_logo{
+    position: absolute;
     width: 20rem;
 }
+*/
