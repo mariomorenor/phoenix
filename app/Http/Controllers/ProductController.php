@@ -14,12 +14,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
-        
-=======
         $productos = Product::all();
         return view('Inventario.productos')->with(["productos"=>$productos]);
->>>>>>> d61d9c7b6a2419c8de0816da6a045a02dd667b6b
     }
 
     /**
