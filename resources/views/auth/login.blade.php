@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@push('css')
+<link rel="stylesheet" href="{{ asset('css/login-style.css') }}">
+@endpush
 
 @section('title')
     Inicio de Sesión 
@@ -15,21 +18,21 @@
         <div class="login-form">
             <form action="{{ url('login') }}" method="post">
                 @csrf
-            <div class="title">
-                Phoenix
-            </div>
-            <div class="input-fields">
-                <input type="email" class="input" name="email" placeholder="Examplo@hotmail.com">
-                @error('email')
+                <div class="title">
+                    Phoenix
+                </div>
+                <div class="input-fields">
+                    <input type="email" class="input" name="email" placeholder="Examplo@hotmail.com">
+                    @error('title')
                     <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
-            </div>
-            <div class="input-fields">
-                <input type="password" class="input" name="password" placeholder="***************">
-                @error('password')
+                    @enderror
+                </div>
+                <div class="input-fields">
+                    <input type="password" class="input" name="password" placeholder="***************">
+                    @error('title')
                     <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
-            </div>
+                    @enderror
+                </div>
                 <button type="submit" class="btn">Ingresar</button>
             </form>
         </div>

@@ -14,7 +14,12 @@ class ProductController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         
+=======
+        $productos = Product::all();
+        return view('Inventario.productos')->with(["productos"=>$productos]);
+>>>>>>> d61d9c7b6a2419c8de0816da6a045a02dd667b6b
     }
 
     /**
@@ -24,7 +29,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -35,7 +40,10 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $producto=new Product();
+        $producto->fill($request->all());
+        $producto->save();
+        return redirect()->route('producto.index');
     }
 
     /**
@@ -69,7 +77,9 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $product->fill($request->all());
+        $product->save();
+        return redirect()->route('producto.index');
     }
 
     /**
