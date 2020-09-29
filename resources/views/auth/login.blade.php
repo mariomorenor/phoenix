@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Inicio de Sesión 
+@endsection
+
 @section('content')
 <div class="container">
     <div class="sub-container">
@@ -9,23 +13,25 @@
             </picture>
         </div>
         <div class="login-form">
-            <form action="#" method="post"></form>
+            <form action="{{ url('login') }}" method="post">
+                @csrf
             <div class="title">
                 Phoenix
             </div>
             <div class="input-fields">
-                <input type="email" class="input" name="Email" placeholder="Examplo@hotmail.com">
-                @error('title')
-                <div class="alert alert-danger">{{ $message }}</div>
+                <input type="email" class="input" name="email" placeholder="Examplo@hotmail.com">
+                @error('email')
+                    <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="input-fields">
-                <input type="password" class="input" name="Password" placeholder="***************">
-                @error('title')
-                <div class="alert alert-danger">{{ $message }}</div>
+                <input type="password" class="input" name="password" placeholder="***************">
+                @error('password')
+                    <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
                 <button type="submit" class="btn">Ingresar</button>
+            </form>
         </div>
     </div>
 </div>
