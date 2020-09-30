@@ -16,7 +16,7 @@ class ProductController extends Controller
     public function index()
     {
         $productos = Product::all();
-        return view('Inventario.productos')->with(["productos"=>$productos]);
+        return view('Inventario.productos');
     }
 
     /**
@@ -90,4 +90,13 @@ class ProductController extends Controller
         $product->delete();
         return redirect()->route('Inventario.productos');
     }
+
+    public function listProducts(Request $request)
+    {
+        $products = Product::all();
+        return response()->json([
+            "rows"=>$products
+        ]);
+    }
+
 }

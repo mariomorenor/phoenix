@@ -23,8 +23,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth']], function () {
     
-    
+    Route::get('inventario','InventoryController@index')->name('inventario.index');
+
+
+    //RUTAS PRODUCTOS
+    Route::get('list_products','ProductController@listProducts')->name('listar_productos');
     Route::resource('producto','ProductController');
+
 
 
 });

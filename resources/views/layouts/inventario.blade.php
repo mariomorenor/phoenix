@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/inventario-style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/inventario/inventario-style.css') }}">
 @endpush
 
 @section('content')
@@ -9,12 +9,12 @@
     <div id="sidebar-container" class="bg-dark">
         <h4 class="titulo_menu">Inventario</h4>
         <ul>
-            <li class="seleccion"><a href="#" class="acciones-btn text-light font-weight">Acciones<span class="fas fa-caret-down first"></span></a></li>
+            <li class="seleccion"><a href="#" id="acciones" class="acciones-btn text-light font-weight ">Acciones<span class="fas fa-caret-down first"></span></a></li>
             <ul class="acciones-show">
                 <li><a href="#" class="d-block text-white p-1 sub_menu_inventario">Mantenimiento artículos</a></li>
                 <li><a href="#" class="d-block text-white p-1 sub_menu_inventario">Crear artículo</a></li>
                 <li><a href="#" class="d-block text-white p-1 sub_menu_inventario">Seriar artículo</a></li>
-                <li><a href="#" class="d-block text-white p-1 sub_menu_inventario">Listado artículos</a></li>
+                <li><a href="{{ route('producto.index') }}" class="d-block text-white p-1 sub_menu_inventario">Listado artículos</a></li>
                 <li><a href="#" class="d-block text-white p-1 sub_menu_inventario">Entradas inventarios</a></li>
                 <li><a href="#" class="d-block text-white p-1 sub_menu_inventario">Salidas Inventario</a></li>
                 <li><a href="#" class="d-block text-white p-1 sub_menu_inventario">Transferencias almacenes </a></li>
