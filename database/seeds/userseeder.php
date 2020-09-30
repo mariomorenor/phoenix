@@ -21,7 +21,7 @@ class userseeder extends Seeder
             'password'=>Hash::make('ceider123'),
             'ci'=>2300430044
         ]);
-        //
+        
     }
 
 }
