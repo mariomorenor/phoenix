@@ -25,6 +25,9 @@ Route::group(['middleware' => ['auth']], function () {
     
     Route::get('inventario','InventoryController@index')->name('inventario.index');
 
+
+    //RUTAS PRODUCTOS
+    Route::get('list_products','ProductController@listProducts');
     Route::resource('producto','ProductController');
 
 
