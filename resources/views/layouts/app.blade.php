@@ -11,7 +11,9 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    @stack('js1')
 
+    
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -22,10 +24,11 @@
     @stack('css')
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
 </head>
 <body>
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
-            <div class="container">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm fixed-top" >
+            <div class="container" >
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
@@ -37,7 +40,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         @auth
-                        <li class="nav-item">
+                        <li class="nav-item ">
                             <a class="nav-link" href="#">Compras <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
@@ -88,6 +91,7 @@
         <main class="" style="margin-top: 55px">
             @yield('content')
         </main>
-    
+        @stack('js2')
+        
 </body>
 </html>

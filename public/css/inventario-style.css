@@ -1,16 +1,89 @@
 :root{
-    --primary: #111854;
+    --primary: #000000;
     --ligth: #ffffff;
-    --ligth-blue: #111854;
-    --grey: #efefef;
+    --grey: #ffffff;
 }
 
 #sidebar-container{
+    
     min-height: 100vh;
     position: fixed;
+    outline: 1px solid #2a2a2a;
 }
 
-#sidebar-container .menu_acciones{
-    width: 18rem;
+.titulo_menu{
+    color: #ffffff;
+    text-align: center;
+    padding: 20px ;
+    font-weight: bold;
 }
+
+a:hover{
+    text-decoration: none;
+}
+
+#sidebar-container {
+    width: 14rem;
+}
+
+#sidebar-container ul{
+    list-style: none;
+    padding: 0;
+}
+
+#sidebar-container ul ul{
+    display: none;
+}
+
+#sidebar-container ul .acciones-show.show{
+    display: block;
+}
+
+#sidebar-container ul .report-show.show2{
+    display: block;
+}
+
+#sidebar-container ul .archi-show.show3{
+    display: block;
+}
+
+#sidebar-container ul .config-show.show4{
+    display: block;
+}
+
+#sidebar-container ul li a{
+    position: relative;
+    
+}
+#sidebar-container ul li a span{
+    position: absolute;
+    top: 50%;
+    left: 12rem;
+    transform: translateY(-50%);
+    font-size: 22px;
+    transition: transform 0.4s;
+}
+
+#sidebar-container ul li a span.rotate{
+    transform: translateY(-50%) rotate(-180deg);
+}
+
+#sidebar-container .seleccion{
+    padding: 10px;
+    margin: 0;
+    outline: 1px solid #2a2a2a;
+    transition: border 0.3s;
+}
+
+#sidebar-container .seleccion:hover{
+    background: rgb(139, 139, 139);
+    border-left: 5px solid #efefef;
+}
+
+
+#sidebar-container .sub_menu_inventario{
+    margin-left: 20px;
+}
+
+
 
