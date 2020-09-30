@@ -21,4 +21,10 @@ Auth::routes(['verify'=>false,'reset'=>false,'confirm'=>false,'register'=>false]
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('producto','ProductController');
+Route::group(['middleware' => ['auth']], function () {
+    
+    
+    Route::resource('producto','ProductController');
+
+
+});
