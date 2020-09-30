@@ -1,4 +1,4 @@
 require('./bootstrap');
 require('@fortawesome/fontawesome-free');
-require('bootstrap-table');
+window.bootstrapTable= require('bootstrap-table');
 require('bootstrap-table/dist/locale/bootstrap-table-es-ES')

@@ -40902,7 +40902,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! @fortawesome/fontawesome-free */ "./node_modules/@fortawesome/fontawesome-free/js/fontawesome.js");
 
-__webpack_require__(/*! bootstrap-table */ "./node_modules/bootstrap-table/dist/bootstrap-table.min.js");
+window.bootstrapTable = __webpack_require__(/*! bootstrap-table */ "./node_modules/bootstrap-table/dist/bootstrap-table.min.js");
 
 __webpack_require__(/*! bootstrap-table/dist/locale/bootstrap-table-es-ES */ "./node_modules/bootstrap-table/dist/locale/bootstrap-table-es-ES.js");
 

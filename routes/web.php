@@ -27,8 +27,9 @@ Route::group(['middleware' => ['auth']], function () {
 
 
     //RUTAS PRODUCTOS
-    Route::get('list_products','ProductController@listProducts');
+    Route::get('list_products','ProductController@listProducts')->name('listar_productos');
     Route::resource('producto','ProductController');
+
 
 
 });
