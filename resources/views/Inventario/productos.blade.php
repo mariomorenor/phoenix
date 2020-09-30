@@ -1,7 +1,5 @@
-@extends('layouts.app')
+@extends('layouts.inventario')
 
-@section('content')
-<div class="container">
-    
-</div>
+@section('panel')
+    Hola mundo
 @endsection

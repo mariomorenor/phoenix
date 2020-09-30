@@ -3,6 +3,10 @@
 <link rel="stylesheet" href="{{ asset('css/login-style.css') }}">
 @endpush
 
+@section('title')
+    Inicio de Sesión 
+@endsection
+
 @section('content')
 <div class="container">
     <div class="sub-container">
@@ -19,13 +23,13 @@
                 </div>
                 <div class="input-fields">
                     <input type="email" class="input" name="email" placeholder="Examplo@hotmail.com">
-                    @error('title')
+                    @error('email')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="input-fields">
                     <input type="password" class="input" name="password" placeholder="***************">
-                    @error('title')
+                    @error('password')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
