@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductRequest;
 use App\Product;
+use Illuminate\Foundation\Testing\WithoutEvents;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -17,7 +18,7 @@ class ProductController extends Controller
 
     public function create()
     {
-        
+        return view('Inventario.ingresoProducto');
     }
 
     public function store(ProductRequest $request)
