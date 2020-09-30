@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.inventario')
 
-@section('content')
+@section('panel')
 
 <div class="container">
     <div class="row">
