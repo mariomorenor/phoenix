@@ -13,22 +13,27 @@
     <form>
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="inputEmail4">Email</label>
-            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+            <label>Código</label>
+            <input type="text" class="form-control @error('code') is-invalid @enderror" name="code" maxlength="15" placeholder="COD001">
+            @error('code')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
           </div>
           <div class="form-group col-md-6">
-            <label for="inputPassword4">Password</label>
-            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+            <label >Nombre</label>
+            <input type="text" class="form-control" name="name" maxlength="15" placeholder="Nombre">
           </div>
         </div>
+        <!--
         <div class="form-group">
-          <label for="inputAddress">Address</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          <label for="inputAddress">Descripción Corta</label>
+          <input type="text" class="form-control" name="description" placeholder="Descripción corta del producto ...">
         </div>
         <div class="form-group">
-          <label for="inputAddress2">Address 2</label>
+          <label for="inputAddress2">Descripción Larga</label>
           <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
         </div>
+        
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputCity">City</label>
@@ -54,28 +59,10 @@
             </label>
           </div>
         </div>
+    -->
         <button type="submit" class="btn btn-primary">Sign in</button>
       </form>
-    <form>
-        <div class="form-group row">
-            <div class="col-4">
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Código:</label>
-                    <div class="col-sm-10">
-                        <input type="text" maxlength="15" name="code" class="form-control" placeholder="COD001" required>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Nombre:</label>
-                    <div class="col-sm-10">
-                        <input type="text" maxlength="15" name="name" class="form-control" placeholder="Ingrese nombre" required>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4"></div>
-            <div class="col-4"></div>
-        </div>
-    </form>
+
 
 
 </div>
