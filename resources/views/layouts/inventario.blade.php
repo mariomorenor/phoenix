@@ -14,7 +14,7 @@
                 <li><a href="#" class="d-block text-white p-1 sub_menu_inventario">Mantenimiento artículos</a></li>
                 <li><a href="#" class="d-block text-white p-1 sub_menu_inventario">Crear artículo</a></li>
                 <li><a href="#" class="d-block text-white p-1 sub_menu_inventario">Seriar artículo</a></li>
-                <li><a href="#" class="d-block text-white p-1 sub_menu_inventario">Listado artículos</a></li>
+                <li><a href="{{ route('producto.index') }}" class="d-block text-white p-1 sub_menu_inventario">Listado artículos</a></li>
                 <li><a href="#" class="d-block text-white p-1 sub_menu_inventario">Entradas inventarios</a></li>
                 <li><a href="#" class="d-block text-white p-1 sub_menu_inventario">Salidas Inventario</a></li>
                 <li><a href="#" class="d-block text-white p-1 sub_menu_inventario">Transferencias almacenes </a></li>
