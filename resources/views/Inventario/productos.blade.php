@@ -13,10 +13,11 @@
                     <th data-field="code" scope="col">#Cod</th>
                     <th data-field="name" scope="col">Nombre</th>
                     <th data-field="short_description" scope="col">Descripción</th>
-                <th data-field="product_type_id" scope="col">Tipo</th>
-                <th data-field="status_product_id" scope="col">Estado</th>
+                <th data-field="product_type_id" data-formatter="typeFormatter" scope="col">Tipo</th>
+                <th data-field="status_product_id" data-formatter="statusFormatter" scope="col">Estado</th>
                 <th data-field="regular_price" scope="col">Precio Regular</th>
                 <th data-field="sale_price" scope="col">Precio Venta</th>
+                <th data-field="acciones" data-formatter="accionesFormatter"></th>
             </tr>
         </thead>
         <tbody>
@@ -43,6 +44,19 @@
             return row.name.toString().toUpperCase().startsWith(text.toString().toUpperCase())
         })
     }
+
+    function statusFormatter(value, row) {
+        return row.status.status;
+    }
+
+    function typeFormatter(value, row) {
+        return row.type.type;
+    }
+    //Funcion para generar un valor por cada registro en este caso un boton
+    function accionesFormatter(value,row) {
+        return "<button class='btn btn-primary'>Modificar</button>";//Escribes el codigo que necesites para que sea retornado como boton
+    }
+
 // *************
 </script>
 
