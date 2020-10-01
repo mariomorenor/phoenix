@@ -13,6 +13,6 @@ class InventoryController extends Controller
 
     public function mantenimiento_productos()
     {
-        return view('Inventario.modificarProducto');
+        return view('Inventario.modificarproducto');
     }
 }

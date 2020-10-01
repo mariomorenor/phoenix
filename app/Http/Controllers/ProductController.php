@@ -40,9 +40,12 @@ class ProductController extends Controller
         //
     }
 
-    public function edit(Product $product)
-    {
-        //
+    public function edit($id)
+    {   
+        $product = Product::find($id);
+        $types = DB::table('product_types')->get();
+        $statues = DB::table('status_product')->get();
+        return view('Inventario.modificarproducto')->with(['types'=>$types, 'statues'=>$statues, 'producto'=>$product]);
     }
 
 
