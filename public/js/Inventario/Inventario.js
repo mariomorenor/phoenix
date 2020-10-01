@@ -8,7 +8,6 @@ function mostrar_submenu(elemento) {
 }
 
 function menu_activo(elemento) {
-    console.log(elemento)
    rotar_flechita(elemento.children().children());
     if (!elemento.hasClass('menu_activo')) {
         $('.menu_activo').removeClass('menu_activo');

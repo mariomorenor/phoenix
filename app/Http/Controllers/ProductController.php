@@ -29,6 +29,8 @@ class ProductController extends Controller
     {
         $producto=new Product();
         $producto->fill($request->all());
+        $producto->product_type_id = $request->product_type;
+        $producto->status_product_id = $request->status_product;
         $producto->save();
         return redirect()->route('producto.index');
     }
