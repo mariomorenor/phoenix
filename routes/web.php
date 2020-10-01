@@ -24,6 +24,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => ['auth']], function () {
     
     Route::get('inventario','InventoryController@index')->name('inventario.index');
+    Route::get('inventario/mantenimiento','InventoryController@mantenimiento_productos')->name('inventario.mantenimiento_productos');
 
 
     //RUTAS PRODUCTOS
