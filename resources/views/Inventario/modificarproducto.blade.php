@@ -6,7 +6,7 @@
 
 <div class="container">
   <br>
-    <form action="{{ route('producto.store') }}" method="POST">
+    <form action="#" method="POST">
         @csrf
         <div>
           <h2 class="h2_producto">MODIFICACIÓN DE PRODUCTOS</h2>
@@ -14,7 +14,7 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <label>Código</label>
-            <input type="text" class="form-control @error('code') is-invalid @enderror" name="code" maxlength="15" placeholder="COD001">
+            <input type="text" value='{{$producto->code}}' class="form-control @error('code') is-invalid @enderror" name="code" maxlength="15" placeholder="COD001">
             @error('code')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
@@ -32,9 +32,11 @@
           <div class="form-group col-md-3">
             <label>Tipo de Producto: </label>
             <select name="product_type" class="form-control">
+                @isset($types)
                 @foreach ($types as $type)
-                    <option value='{{$type->id}}'>{{$type->type}}</option>
+                <option value='{{$type->id}}'>{{$type->type}}</option>
                 @endforeach
+                @endisset
             </select>
           </div>
           <div class="form-group col-md-3">
@@ -85,7 +87,7 @@
 // SideBar
         mostrar_submenu($('#sidebar-container ul .acciones-show')); //Muestra El submenu ACCIONES
         menu_activo($('.acciones-btn')) //Sombrea el menu ACCIONES
-        submenu_activo($('#link_crear_articulo')); //Se pone en negrita la opcion Listado Articulo
+        submenu_activo($('#link_modificar_articulo')); //Se pone en negrita la opcion Listado Articulo
 // **********
 
 
