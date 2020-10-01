@@ -65,7 +65,6 @@
 
     $('.report-btn').click(function () {
         mostrar_submenu($('#sidebar-container ul .report-show'));
-        
         menu_activo($('.report-btn'))
     });
 
