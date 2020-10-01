@@ -31,7 +31,7 @@
         <div class="form-row">
           <div class="form-group col-md-3">
             <label>Tipo de Producto: </label>
-            <select  class="form-control">
+            <select name="product_type" class="form-control">
                 @foreach ($types as $type)
                     <option value='{{$type->id}}'>{{$type->type}}</option>
                 @endforeach
@@ -39,7 +39,7 @@
           </div>
           <div class="form-group col-md-3">
             <label for="inputCity">Estado: </label>
-            <select  class="form-control">
+            <select name="status_product" class="form-control">
               @isset($statues)
               @foreach ($statues as $status)
               <option value='{{$status->id}}'>{{$status->status}}</option>
@@ -72,18 +72,6 @@
           <div class="alert alert-danger">{{ $message }}</div>
           @enderror
         </div>
-        
-        <!--
-        <div class="form-group">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck">
-            <label class="form-check-label" for="gridCheck">
-              Check me out
-            </label>
-          </div>
-        </div>
-      -->
-
         <button type="submit" class="btn btn-primary">Guardar</button>
       </form>
 </div>

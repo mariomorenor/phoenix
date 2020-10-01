@@ -13,8 +13,8 @@
                     <th data-field="code" scope="col">#Cod</th>
                     <th data-field="name" scope="col">Nombre</th>
                     <th data-field="short_description" scope="col">Descripción</th>
-                <th data-field="type" scope="col">Tipo</th>
-                <th data-field="status" scope="col">Estado</th>
+                <th data-field="product_type_id" scope="col">Tipo</th>
+                <th data-field="status_product_id" scope="col">Estado</th>
                 <th data-field="regular_price" scope="col">Precio Regular</th>
                 <th data-field="sale_price" scope="col">Precio Venta</th>
             </tr>
@@ -40,8 +40,7 @@
 
     function customSearch(data, text) {
         return data.filter(function (row) {
-            return row.name.toString().toUpperCase().startsWith(text.toString().toUpperCase()) ||
-                row.type.toString().toUpperCase().startsWith(text.toString().toUpperCase())
+            return row.name.toString().toUpperCase().startsWith(text.toString().toUpperCase())
         })
     }
 // *************

@@ -3,6 +3,8 @@
 @push('css')
     <link rel="stylesheet" href="{{ asset('css/inventario/inventario-style.css') }}">
 @endpush
+
+
 @prepend('js')
 <script src="{{ asset('js/Inventario/Inventario.js') }}"></script>
 @endprepend
@@ -13,7 +15,7 @@
         <h4 class="titulo_menu">Inventario</h4>
         <ul>
             <li class="seleccion acciones-btn"><a href="#" id="acciones" class="text-light font-weight ">Acciones<span class="fas fa-caret-down flecha"></span></a></li>
-            <ul class="acciones-show ">
+            <ul class="acciones-show">
                 <li><a href="#" class="d-block text-white p-1 sub_menu_inventario">Mantenimiento artículos</a></li>
                 <li><a id="link_crear_articulo" href="{{ route('producto.create') }}" class="d-block text-white p-1 sub_menu_inventario">Crear artículo</a></li>
                 <li><a href="#" class="d-block text-white p-1 sub_menu_inventario">Seriar artículo</a></li>
