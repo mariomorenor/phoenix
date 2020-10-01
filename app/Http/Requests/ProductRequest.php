@@ -32,7 +32,12 @@ class ProductRequest extends FormRequest
         return [
             'code.required'=>'El campo :attribute no debe estar vacío',
             'code.max'=>'El campo :attribute debe ser menor a 15 caracteres',
-            'name.required'
+            'name.required'=> 'El campo :attribute no debe estar vacío',
+            'name.min'=> 'El campo :attribute debe contener al menos 4 caracteres',
+            'name.max'=> 'El campo :attribute debe ser menor a 15 caracteres',
+            'description.max'=>'El campo :attribute no debe ser mayor a 250 caracteres',
+            'short_description.max'=>'El campo :attribute no debe ser mayor a 50 caracteres',
+
         ];
     }
 

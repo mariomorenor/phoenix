@@ -31,19 +31,7 @@ a:hover{
     display: none;
 }
 
-#sidebar-container ul .acciones-show.show{
-    display: block;
-}
-
-#sidebar-container ul .report-show.show2{
-    display: block;
-}
-
-#sidebar-container ul .archi-show.show3{
-    display: block;
-}
-
-#sidebar-container ul .config-show.show4{
+#sidebar-container ul .listado{
     display: block;
 }
 
@@ -64,6 +52,7 @@ a:hover{
     transform: translateY(-50%) rotate(-180deg);
 }
 
+
 #sidebar-container .seleccion{
     padding: 10px;
     margin: 0;
@@ -72,19 +61,22 @@ a:hover{
 }
 
 .menu_activo{
-    font-style: bold;
-    color: aqua;
+    background: rgb(139, 139, 139);
+    border-left: 5px solid #efefef;
+}
+
+.link_activo{
+    font-weight: bold;
 }
 
 #sidebar-container .seleccion:hover{
     background: rgb(139, 139, 139);
     border-left: 5px solid #efefef;
+    cursor: pointer;
 }
 
 
 #sidebar-container .sub_menu_inventario{
     margin-left: 20px;
 }
-
-
 

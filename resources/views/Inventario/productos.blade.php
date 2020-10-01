@@ -29,14 +29,22 @@
 
 @push('js')
 <script>
+// SideBar
+        mostrar_submenu($('#sidebar-container ul .acciones-show')); //Muestra El submenu ACCIONES
+        menu_activo($('.acciones-btn')) //Sombrea el menu ACCIONES
+        submenu_activo($('#link_listado_articulo')); //Se pone en negrita la opcion Listado Articulo
+// **********
+
+// Tabla
     $('#tabla_productos').bootstrapTable({});
+
     function customSearch(data, text) {
-    console.log(data)
-    return data.filter(function (row) {
-    return row.name.indexOf(text) > -1
-    || row.type.indexOf(text) > -1
-    })
-     }
+        return data.filter(function (row) {
+            return row.name.toString().toUpperCase().startsWith(text.toString().toUpperCase()) ||
+                row.type.toString().toUpperCase().startsWith(text.toString().toUpperCase())
+        })
+    }
+// *************
 </script>
 
 @endpush
