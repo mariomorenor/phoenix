@@ -20,8 +20,9 @@ class ProductController extends Controller
 
     public function create()
     {
-        $datos = DB::table('product_types')->get();
-        return view('Inventario.ingresoProducto')->with(['types'=>$datos]);
+        $types = DB::table('product_types')->get();
+        $statues = DB::table('status_product')->get();
+        return view('Inventario.ingresoProducto')->with(['types'=>$types, 'statues'=>$statues]);
     }
 
     public function store(ProductRequest $request)
