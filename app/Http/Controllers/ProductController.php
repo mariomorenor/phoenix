@@ -6,6 +6,8 @@ use App\Http\Requests\ProductRequest;
 use App\Product;
 use Illuminate\Foundation\Testing\WithoutEvents;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use ProductType;
 
 class ProductController extends Controller
 {
@@ -18,7 +20,8 @@ class ProductController extends Controller
 
     public function create()
     {
-        return view('Inventario.ingresoProducto');
+        $datos = DB::table('product_types')->get();
+        return view('Inventario.ingresoProducto')->with(['types'=>$datos]);
     }
 
     public function store(ProductRequest $request)

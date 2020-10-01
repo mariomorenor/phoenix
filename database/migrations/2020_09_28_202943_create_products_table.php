@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->string("name",15);
             $table->string("description",250)->nullable();
             $table->string("short_description",50)->nullable();
-            $table->string("type",10);
+            $table->foreignId("product_type_id")->constrained('product_types');
             $table->string("status",15);
             $table->double("regular_price",7,2);
             $table->double("sale_price",7,2);
