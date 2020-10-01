@@ -88,3 +88,18 @@
       </form>
 </div>
 @endsection
+
+
+
+@push('js')
+<script>
+// SideBar
+        mostrar_submenu($('#sidebar-container ul .acciones-show')); //Muestra El submenu ACCIONES
+        menu_activo($('.acciones-btn')) //Sombrea el menu ACCIONES
+        submenu_activo($('#link_crear_articulo')); //Se pone en negrita la opcion Listado Articulo
+// **********
+
+
+</script>
+
+@endpush
