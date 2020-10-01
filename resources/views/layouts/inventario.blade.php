@@ -16,7 +16,7 @@
         <ul>
             <li class="seleccion acciones-btn"><a href="#" id="acciones" class="text-light font-weight ">Acciones<span class="fas fa-caret-down flecha"></span></a></li>
             <ul class="acciones-show">
-                <li><a href="#" class="d-block text-white p-1 sub_menu_inventario">Mantenimiento artículos</a></li>
+                <li><a id="link_modificar_articulo" href="#" class="d-block text-white p-1 sub_menu_inventario">Mantenimiento artículos</a></li>
                 <li><a id="link_crear_articulo" href="{{ route('producto.create') }}" class="d-block text-white p-1 sub_menu_inventario">Crear artículo</a></li>
                 <li><a href="#" class="d-block text-white p-1 sub_menu_inventario">Seriar artículo</a></li>
                 <li><a id="link_listado_articulo" href="{{ route('producto.index') }}" class="d-block text-white p-1 sub_menu_inventario">Listado artículos</a></li>
