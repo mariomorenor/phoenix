@@ -4,17 +4,26 @@
 @endpush
 @section('panel')
 <div class="container">
-    <form action="{{ route('products.store') }}" method="POST" class="mt-3 rounded border py-3 px-5 shadow-lg col bg-white">
+    <form action="{{ route('products.store') }}" method="POST"
+        class="mt-3 rounded border py-3 px-5 shadow-lg col bg-white">
         @csrf
         <div>
             <h2 class="h2_producto">INGRESO DE PRODUCTOS</h2>
         </div>
         <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-3">
                 <label>Código</label>
                 <input type="text" value="{{ old('code') }}" class="form-control @error('code') is-invalid @enderror"
                     name="code" maxlength="15" placeholder="COD001">
                 @error('code')
+                <span class="text-danger">{{ $message }}</span>
+                @enderror
+            </div>
+            <div class="form-group col-md-3">
+                <label for="inputAddress2">Cantidad: </label>
+                <input type="number" value="{{ old('total_amount') }}" name="total_amount" class="form-control" step="1"
+                    placeholder="1" min="1">
+                @error('total_amount')
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
@@ -47,14 +56,20 @@
                 </select>
             </div>
             <div class="form-group col-md-3">
-                <label for="inputCity">Precio normal: </label>
+                <label>Precio normal: </label>
                 <input type="number" value="{{ old('regular_price') }}" name="regular_price" class="form-control"
                     step="0.01" placeholder="10.00" min="0.01" max="99999.99">
+                @error('regular_price')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="form-group col-md-3">
-                <label for="inputZip">Precio venta: </label>
+                <label>Precio venta: </label>
                 <input type="number" value="{{ old('sale_price') }}" name="sale_price" class="form-control" step="0.01"
                     placeholder="10.00" min="0.01" max="99999.99">
+                @error('sale_price')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
         </div>
         <div class="form-group">
@@ -75,10 +90,6 @@
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
-        {{-- //TODO Input de cantidad de stock ahi pilas cv acomodarás bonito --}}
-        <div class="form-group">
-            <input type="number" name="total_amount">
-        </div>
         <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
 </div>
@@ -86,13 +97,11 @@
 
 @push('js')
 <script>
-// SideBar
-        mostrar_submenu($('#sidebar-container ul .acciones-show')); //Muestra El submenu ACCIONES
-        menu_activo($('.acciones-btn')) //Sombrea el menu ACCIONES
-        submenu_activo($('#link_crear_articulo')); //Se pone en negrita la opcion Listado Articulo
-// **********
-
-
+    // SideBar
+    mostrar_submenu($('#sidebar-container ul .acciones-show')); //Muestra El submenu ACCIONES
+    menu_activo($('.acciones-btn')) //Sombrea el menu ACCIONES
+    submenu_activo($('#link_crear_articulo')); //Se pone en negrita la opcion Listado Articulo
+    // **********
 </script>
 
 @endpush
