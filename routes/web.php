@@ -30,6 +30,7 @@ Route::group(['middleware' => ['auth']], function () {
     //RUTAS PRODUCTOS
     Route::get('list_products','ProductController@listProducts')->name('listar_productos');
     Route::resource('products','ProductController');
+    Route::get('modificar',function(){return view('Inventario.entradaProducto');});
 
 
 
