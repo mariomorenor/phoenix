@@ -13,13 +13,13 @@ class productTypeSeeder extends Seeder
     public function run()
     {
         DB::table('product_types')->insert([
-            'type'=>'Producto Simple'
+            'type'=>'simple'
         ]);
         DB::table('product_types')->insert([
-            'type'=>'Producto Variable'
+            'type'=>'variable'
         ]);
         DB::table('product_types')->insert([
-            'type'=>'Producto Agrupado'
+            'type'=>'grouped'
         ]);
     }
 }

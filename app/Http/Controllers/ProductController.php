@@ -5,18 +5,15 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProductRequest;
 use App\Product;
 use App\Stock;
-use Illuminate\Foundation\Testing\WithoutEvents;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use ProductType;
+use Automattic\WooCommerce\Client as Woo;
 
 class ProductController extends Controller
 {
 
     public function index()
     {
-
-        $productos = Product::all();
         return view('Inventario.productos');
     }
 
@@ -35,6 +32,32 @@ class ProductController extends Controller
         $stock = new Stock;
         $stock->fill($request->all());
         $producto->stock()->save($stock);
+
+        $woocommerce = new Woo(
+            'https://www.ponteoncesd.com/', 
+            'ck_27554f89b8abdd8215e861d48e3ec1f6bf6ca51b', 
+            'cs_f679cbbd2e943e335c2a7dd0fead8c1494d2477d',
+            [
+                'wp_api' => true,
+                'version' => 'wc/v3',
+                'query_string_auth' => true 
+            ]
+        );
+    
+        $data = [
+            'sku'=>$producto->code,
+            'name' => $producto->name,
+            'type' => $producto->type->type,
+            'regular_price' => $producto->regular_price,
+            'sale_price'=>$producto->sale_price,
+            'description' => $producto->description,
+            'short_description' => $producto->short_description,
+            'stock_quantity'=>$stock->total_amount,
+            
+        ];
+
+        $woocommerce->post('products', $data);
+
         return redirect()->route('products.index')->with('status','successful');
     }
 

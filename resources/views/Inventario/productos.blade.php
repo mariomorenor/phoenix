@@ -71,7 +71,7 @@
     }
 
     function stockFormatter(value, row) {
-        return row.stock.total_amount;
+        return row.stock_quantity;
     }
 
 

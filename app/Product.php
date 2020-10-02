@@ -18,8 +18,6 @@ class Product extends Model
     ];
 
     protected $casts=[
-        'regular_price'=>"double",
-        'sale_price'=>"double",
         'status_product_id'=>"integer",
         'product_type_id'=>"integer",
     ];
