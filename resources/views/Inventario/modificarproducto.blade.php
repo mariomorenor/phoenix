@@ -8,10 +8,10 @@
         @csrf
         @method('PUT')
         <div>
-            <h2 class="h2_producto">INGRESO DE PRODUCTOS</h2>
+            <h2 class="h2_producto">MODIFICACIÓN DE PRODUCTOS</h2>
         </div>
         <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-3">
                 <label>Código</label>
                 <input type="text" readonly value="{{ old('code') ?? $producto->code }}" class="form-control @error('code') is-invalid @enderror"
                     name="code" maxlength="15" placeholder="COD001">
@@ -19,7 +19,15 @@
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-3">
+                <label for="inputAddress2">Cantidad: </label>
+                <input type="number" readonly value="{{ old('total_amount') ?? $producto->stock->total_amount}}" name="total_amount" class="form-control" step="1"
+                    placeholder="1" min="1">
+                @error('total_amount')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="form-group col-md-3">
                 <label>Nombre</label>
                 <input type="text" value="{{ old('name') ?? $producto->name }}" class="form-control @error('name') is-invalid @enderror"
                     name="name" maxlength="15" placeholder="Nombre del Producto">
@@ -77,6 +85,7 @@
             @enderror
         </div>
         <button type="submit" class="btn btn-primary">Modificar</button>
+        <a class="btn btn-dark" href="{{ route('products.index') }}" role="button">Cancelar</a>
     </form>
 </div>
 @endsection
@@ -86,7 +95,7 @@
 // SideBar
         mostrar_submenu($('#sidebar-container ul .acciones-show')); //Muestra El submenu ACCIONES
         menu_activo($('.acciones-btn')) //Sombrea el menu ACCIONES
-        submenu_activo($('#link_crear_articulo')); //Se pone en negrita la opcion Listado Articulo
+        submenu_activo($('#link_modificar_articulo')); //Se pone en negrita la opcion Listado Articulo
 // **********
 
 
