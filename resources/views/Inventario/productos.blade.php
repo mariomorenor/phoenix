@@ -17,7 +17,7 @@
                 <th data-field="status" data-formatter="statusFormatter" scope="col">Estado</th>
                 <th data-field="regular_price" scope="col">Precio Regular</th>
                 <th data-field="sale_price" scope="col">Precio Venta</th>
-                <th data-field="Acciones" data-formatter="accionesFormatter" scope="col" data-width="111">Acciones</th>
+                <th data-field="Acciones" data-formatter="accionesFormatter" data-events="accionesEvent" scope="col" data-width="111">Acciones</th>
                 
             </tr>
         </thead>
@@ -38,7 +38,9 @@
 // **********
 
 // Tabla
-    $('#tabla_productos').bootstrapTable({});
+    var $tabla_Productos = $('#tabla_productos');
+
+    $tabla_Productos.bootstrapTable();
 
     function customSearch(data, text) {
         return data.filter(function (row) {
@@ -56,7 +58,39 @@
     
     function accionesFormatter(value,row){
         
-        return '<a type="button" href="/producto/'+row.id+'/edit" class="btn btn-outline-primary"><i class="fas fa-edit"></i></a> <button class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i></button> '
+        return '<a type="button" href="/producto/'+row.id+'/edit" class="btn btn-outline-primary"><i class="fas fa-edit"></i></a> '+
+                '<button class="btn btn-outline-danger delete"><i class="fas fa-trash-alt"></i></button> '
+    }
+
+    window.accionesEvent = {
+        'click .delete': function(e, value,row){
+            //TODO Personalizar el mensaje de confirmación de eliminación
+            Swal.fire({
+                icon: 'warning',
+                title:'Confirmar Eliminación',
+                text:'¿Está Seguro de Eliminar el Registro?',
+                allowOutsideClick:false, //No permite que se cierre la ventana de confirmación cuando el usuario da click fuera del mensaje
+                showCancelButton:true,  //Muestra el botón cancelar
+                cancelButtonColor: '#ff4000', //Color del Botón cancelar
+                cancelButtonText:'Cancelar' //Texto Botón cancelar
+            }).then((data)=>{
+                if (data.value) {
+                    $.ajax({
+                        type: "delete",
+                        data:{
+                            _token: "{{ csrf_token() }}" 
+                        },
+                        url: "/producto/"+row.id,
+                        success: function (response) {
+                            alert(response)
+                        },
+                        error: function (error) {
+                            console.log(error)
+                          }
+                    });
+                }
+            });
+        }
     }
 
 // *************

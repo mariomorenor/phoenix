@@ -56,10 +56,11 @@ class ProductController extends Controller
         return redirect()->route('producto.index');
     }
 
-    public function destroy(Product $product)
-    {
+    public function destroy($id)
+    {   
+        $product = Product::find($id);
         $product->delete();
-        return redirect()->route('Inventario.productos');
+        return response('producto eliminado',200);
     }
 
     public function listProducts(Request $request)
