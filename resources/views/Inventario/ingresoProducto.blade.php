@@ -10,11 +10,18 @@
             <h2 class="h2_producto">INGRESO DE PRODUCTOS</h2>
         </div>
         <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-3">
                 <label>Código</label>
                 <input type="text" value="{{ old('code') }}" class="form-control @error('code') is-invalid @enderror"
                     name="code" maxlength="15" placeholder="COD001">
                 @error('code')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="form-group col-md-3">
+              <label for="inputAddress2">Cantidad: </label>
+              <input type="number" value="{{ old('total_amount') }}" name="total_amount" class="form-control" step="1" placeholder="1" min="1">
+              @error('total_amount')
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
@@ -47,14 +54,20 @@
                 </select>
             </div>
             <div class="form-group col-md-3">
-                <label for="inputCity">Precio normal: </label>
+                <label>Precio normal: </label>
                 <input type="number" value="{{ old('regular_price') }}" name="regular_price" class="form-control"
                     step="0.01" placeholder="10.00" min="0.01" max="99999.99">
+                    @error('regular_price')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="form-group col-md-3">
-                <label for="inputZip">Precio venta: </label>
+                <label>Precio venta: </label>
                 <input type="number" value="{{ old('sale_price') }}" name="sale_price" class="form-control" step="0.01"
                     placeholder="10.00" min="0.01" max="99999.99">
+                    @error('sale_price')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
         </div>
         <div class="form-group">
@@ -74,10 +87,6 @@
             @error('description')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
-        </div>
-        {{-- //TODO Input de cantidad de stock ahi pilas cv acomodarás bonito --}}
-        <div class="form-group">
-            <input type="number" name="total_amount">
         </div>
         <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
