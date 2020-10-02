@@ -32,7 +32,7 @@ class ProductController extends Controller
         $producto->product_type_id = $request->product_type;
         $producto->status_product_id = $request->status_product;
         $producto->save();
-        return redirect()->route('producto.index');
+        return redirect()->route('producto.index')->with('status','successful');
     }
 
     public function show(Product $product)
