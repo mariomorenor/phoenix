@@ -8,7 +8,7 @@
         @csrf
         @method('PUT')
         <div>
-            <h2 class="h2_producto">INGRESO DE PRODUCTOS</h2>
+            <h2 class="h2_producto">MODIFICACIÓN DE PRODUCTOS</h2>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
@@ -77,6 +77,7 @@
             @enderror
         </div>
         <button type="submit" class="btn btn-primary">Modificar</button>
+        <button type="submit" class="btn btn-dark">Cancelar</button>
     </form>
 </div>
 @endsection
@@ -86,7 +87,7 @@
 // SideBar
         mostrar_submenu($('#sidebar-container ul .acciones-show')); //Muestra El submenu ACCIONES
         menu_activo($('.acciones-btn')) //Sombrea el menu ACCIONES
-        submenu_activo($('#link_crear_articulo')); //Se pone en negrita la opcion Listado Articulo
+        submenu_activo($('#link_modificar_articulo')); //Se pone en negrita la opcion Listado Articulo
 // **********
 
 
