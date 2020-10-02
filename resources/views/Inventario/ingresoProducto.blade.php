@@ -24,7 +24,7 @@
                 <input type="number" value="{{ old('total_amount') }}" name="total_amount" class="form-control" step="1"
                     placeholder="1" min="1">
                 @error('total_amount')
-                <div class="alert alert-danger">{{ $message }}</div>
+                <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
             <div class="form-group col-md-6">
@@ -32,7 +32,7 @@
                 <input type="text" value="{{ old('name') }}" class="form-control @error('name') is-invalid @enderror"
                     name="name" maxlength="15" placeholder="Nombre del Producto">
                 @error('name')
-                <div class="alert alert-danger">{{ $message }}</div>
+                <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
         </div>
@@ -60,7 +60,7 @@
                 <input type="number" value="{{ old('regular_price') }}" name="regular_price" class="form-control"
                     step="0.01" placeholder="10.00" min="0.01" max="99999.99">
                 @error('regular_price')
-                <div class="alert alert-danger">{{ $message }}</div>
+                <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
             <div class="form-group col-md-3">
@@ -68,7 +68,7 @@
                 <input type="number" value="{{ old('sale_price') }}" name="sale_price" class="form-control" step="0.01"
                     placeholder="10.00" min="0.01" max="99999.99">
                 @error('sale_price')
-                <div class="alert alert-danger">{{ $message }}</div>
+                <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
         </div>
@@ -78,7 +78,7 @@
                 class="form-control @error('short_description') is-invalid @enderror" name="short_description"
                 maxlength="50" placeholder="Descripción corta del producto...">
             @error('short_description')
-            <div class="alert alert-danger">{{ $message }}</div>
+            <span class="text-danger">{{ $message }}</span>
             @enderror
         </div>
         <div class="form-group">
@@ -87,7 +87,7 @@
                 class="form-control @error('description') is-invalid @enderror" maxlength="250"
                 placeholder="Descripción larga del producto...">{{old('description')}}</textarea>
             @error('description')
-            <div class="alert alert-danger">{{ $message }}</div>
+            <span class="text-danger">{{ $message }}</span>
             @enderror
         </div>
         <button type="submit" class="btn btn-primary">Guardar</button>
