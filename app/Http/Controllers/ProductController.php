@@ -29,8 +29,10 @@ class ProductController extends Controller
     {
         $producto=new Product();
         $producto->fill($request->all());
+        $producto->product_type_id = $request->product_type;
+        $producto->status_product_id = $request->status_product;
         $producto->save();
-        return redirect()->route('producto.index');
+        return redirect()->route('producto.index')->with('status','successful');
     }
 
     public function show(Product $product)
@@ -38,9 +40,12 @@ class ProductController extends Controller
         //
     }
 
-    public function edit(Product $product)
-    {
-        //
+    public function edit($id)
+    {   
+        $product = Product::find($id);
+        $types = DB::table('product_types')->get();
+        $statues = DB::table('status_product')->get();
+        return view('Inventario.modificarproducto')->with(['types'=>$types, 'statues'=>$statues, 'producto'=>$product]);
     }
 
 
@@ -51,10 +56,11 @@ class ProductController extends Controller
         return redirect()->route('producto.index');
     }
 
-    public function destroy(Product $product)
-    {
+    public function destroy($id)
+    {   
+        $product = Product::find($id);
         $product->delete();
-        return redirect()->route('Inventario.productos');
+        return response('producto eliminado',200);
     }
 
     public function listProducts(Request $request)

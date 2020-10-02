@@ -23,8 +23,9 @@
 </head>
 <body>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm fixed-top" >
-            <div class="container" >
+            <div class="container mx-0 px-0" >
                 <a class="navbar-brand" href="{{ url('/') }}">
+                    <img src="{{ asset('Images/Login/logo.png') }}" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -33,7 +34,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav mr-auto" style="width: 65rem">
                         @auth
                         <li class="nav-item ">
                             <a class="nav-link" href="#">Compras <span class="sr-only">(current)</span></a>

@@ -22,7 +22,7 @@
                     Phoenix
                 </div>
                 <div class="input-fields">
-                    <input type="email" class="input" name="email" placeholder="Examplo@hotmail.com">
+                    <input type="email" class="input" name="email" placeholder="Example@hotmail.com">
                     @error('email')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror

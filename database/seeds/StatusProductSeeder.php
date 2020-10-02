@@ -13,16 +13,16 @@ class StatusProductSeeder extends Seeder
     public function run()
     {
         DB::table('status_product')->insert([
-            'status'=>'publicado'
+            'status'=>'Publicado'
         ]);
         DB::table('status_product')->insert([
-            'status'=>'privado'
+            'status'=>'Privado'
         ]);
         DB::table('status_product')->insert([
-            'status'=>'pendiente'
+            'status'=>'Pendiente'
         ]);
         DB::table('status_product')->insert([
-            'status'=>'borrador'
+            'status'=>'Borrador'
         ]);
     }
 }

@@ -10,4 +10,9 @@ class InventoryController extends Controller
     {
         return view('layouts.inventario');
     }
+
+    public function mantenimiento_productos()
+    {
+        return view('Inventario.modificarproducto');
+    }
 }
