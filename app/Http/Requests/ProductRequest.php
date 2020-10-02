@@ -23,7 +23,8 @@ class ProductRequest extends FormRequest
             "code"=>"required|max:15|unique:products,code",
             "name"=>"required|min:4|max:15",
             "description"=>"max:250",
-            "short_description"=>"max:50"
+            "short_description"=>"max:50",
+            "total_amount"=>"required|numeric|min:1|max:5000"
         ];
     }
 
@@ -37,6 +38,10 @@ class ProductRequest extends FormRequest
             'name.max'=> 'El campo :attribute debe ser menor a 15 caracteres',
             'description.max'=>'El campo :attribute no debe ser mayor a 250 caracteres',
             'short_description.max'=>'El campo :attribute no debe ser mayor a 50 caracteres',
+            'total_amount.required'=>'El campo :attribute no debe estar vacío.',
+            'total_amount.numeric'=>'El campo :attribute debe ser un número.',
+            'total_amount.min'=>'El campo :attribute debe ser mayor a 0.',
+            'total_amount.max'=>'El campo :attribute no debe exceder los 5000.',
 
         ];
     }
@@ -47,7 +52,8 @@ class ProductRequest extends FormRequest
             'code'=> 'Código del Producto',
             'name'=> 'Nombre del Producto',
             'description'=> 'Descripción del Producto',
-            'short_description'=>'Descripción Corta'
+            'short_description'=>'Descripción Corta',
+            'total_amount'=>'Cantidad de Stock'
         ];
     }
 }
