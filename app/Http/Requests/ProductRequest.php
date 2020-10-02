@@ -20,7 +20,7 @@ class ProductRequest extends FormRequest
     public function rules()
     {
         return [
-            "code"=>"required|max:15",
+            "code"=>"required|max:15|unique:products,code",
             "name"=>"required|min:4|max:15",
             "description"=>"max:250",
             "short_description"=>"max:50"

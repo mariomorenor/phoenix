@@ -4,7 +4,7 @@
 @endpush
 @section('panel')
 <div class="container">
-    <form action="{{ route('producto.store') }}" method="POST" class="mt-3 rounded border py-3 px-5 shadow-lg col bg-white">
+    <form action="{{ route('products.store') }}" method="POST" class="mt-3 rounded border py-3 px-5 shadow-lg col bg-white">
         @csrf
         <div>
             <h2 class="h2_producto">INGRESO DE PRODUCTOS</h2>
@@ -30,7 +30,7 @@
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label>Tipo de Producto: </label>
-                <select name="product_type" class="form-control">
+                <select name="product_type_id" class="form-control">
                     @foreach ($types as $type)
                     <option value='{{$type->id}}'>{{$type->type}}</option>
                     @endforeach
@@ -38,7 +38,7 @@
             </div>
             <div class="form-group col-md-3">
                 <label for="inputCity">Estado: </label>
-                <select name="status_product" class="form-control">
+                <select name="status_product_id" class="form-control">
                     @isset($statues)
                     @foreach ($statues as $status)
                     <option value='{{$status->id}}'>{{$status->status}}</option>
@@ -74,6 +74,10 @@
             @error('description')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
+        </div>
+        {{-- //TODO Input de cantidad de stock ahi pilas cv acomodarás bonito --}}
+        <div class="form-group">
+            <input type="number" name="total_amount">
         </div>
         <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
