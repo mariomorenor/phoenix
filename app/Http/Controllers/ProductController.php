@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductRequest;
 use App\Product;
+use App\Stock;
 use Illuminate\Foundation\Testing\WithoutEvents;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -14,6 +15,7 @@ class ProductController extends Controller
 
     public function index()
     {
+
         $productos = Product::all();
         return view('Inventario.productos');
     }
@@ -29,10 +31,11 @@ class ProductController extends Controller
     {
         $producto=new Product();
         $producto->fill($request->all());
-        $producto->product_type_id = $request->product_type;
-        $producto->status_product_id = $request->status_product;
         $producto->save();
-        return redirect()->route('producto.index')->with('status','successful');
+        $stock = new Stock;
+        $stock->fill($request->all());
+        $producto->stock()->save($stock);
+        return redirect()->route('products.index')->with('status','successful');
     }
 
     public function show(Product $product)
@@ -40,9 +43,8 @@ class ProductController extends Controller
         //
     }
 
-    public function edit($id)
+    public function edit(Product $product)
     {   
-        $product = Product::find($id);
         $types = DB::table('product_types')->get();
         $statues = DB::table('status_product')->get();
         return view('Inventario.modificarproducto')->with(['types'=>$types, 'statues'=>$statues, 'producto'=>$product]);
@@ -53,12 +55,11 @@ class ProductController extends Controller
     {
         $product->fill($request->all());
         $product->save();
-        return redirect()->route('producto.index');
+        return redirect()->route('products.index');
     }
 
-    public function destroy($id)
+    public function destroy(Product $product)
     {   
-        $product = Product::find($id);
         $product->delete();
         return response('producto eliminado',200);
     }

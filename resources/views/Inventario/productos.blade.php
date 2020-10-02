@@ -12,11 +12,12 @@
                 <tr class="tipo_letra_encabezado">
                     <th data-field="code" scope="col">#Código</th>
                     <th data-field="name" scope="col">Nombre</th>
+                    <th data-field="stock" data-formatter="stockFormatter" scope="col">Stock</th>
                     <th data-field="short_description" scope="col">Descripción</th>
                     <th data-field="type" data-formatter="typeFormatter" scope="col">Tipo</th>
                     <th data-field="status" data-formatter="statusFormatter" scope="col">Estado</th>
-                    <th data-field="regular_price" scope="col">Precio Regular</th>
-                    <th data-field="sale_price" scope="col">Precio Venta</th>
+                    <th data-field="regular_price" data-formatter="regular_priceFormatter" scope="col">Precio Regular</th>
+                    <th data-field="sale_price" data-formatter="sale_priceFormatter" scope="col">Precio Venta</th>
                     <th data-field="Acciones" data-formatter="accionesFormatter" data-events="accionesEvent" scope="col" data-width="111">Acciones</th>
             </tr>
         </thead>
@@ -57,9 +58,25 @@
     
     function accionesFormatter(value,row){
 
-        return `<a type="button" href="/producto/${row.id}/edit" class="btn btn-outline-primary"><i class="fas fa-edit"></i></a> 
+        return `<a type="button" href="/products/${row.id}/edit" class="btn btn-outline-primary"><i class="fas fa-edit"></i></a> 
                 <button class="btn btn-outline-danger delete"><i class="fas fa-trash-alt"></i></button>`
     }
+
+    function regular_priceFormatter(value){
+        return '$ '+value;
+    }
+
+    function sale_priceFormatter(value){
+        return '$ '+value;
+    }
+
+    function stockFormatter(value, row) {
+        return row.stock.total_amount;
+    }
+
+
+
+
     //TODO Hacer funcionar el botón de eliminar de la tabla productos
     window.accionesEvent = {
         'click .delete': function(e, value,row){
@@ -80,7 +97,7 @@
                         data:{
                             _token: "{{ csrf_token() }}"  //Sin esta linea no puede enviarse la peticion por seguridades de token
                         },
-                        url: "/producto/"+row.id, //URL para el controlador con el Id del producto que quiero eliminar
+                        url: "/products/"+row.id, //URL para el controlador con el Id del producto que quiero eliminar
                         success: function (response) {
                                     Swal.fire({
                                         icon:'success',

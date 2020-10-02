@@ -13,9 +13,18 @@ class Product extends Model
         'short_description',
         'regular_price',
         'sale_price',
+        'status_product_id',
+        'product_type_id'
     ];
 
-    protected $with=['status','type'];
+    protected $casts=[
+        'regular_price'=>"double",
+        'sale_price'=>"double",
+        'status_product_id'=>"integer",
+        'product_type_id'=>"integer",
+    ];
+
+    protected $with=['status','type','stock'];
 
     public function status()
     {
@@ -25,5 +34,10 @@ class Product extends Model
     public function type()
     {
         return $this->belongsTo(Product_Type::class,'product_type_id');
+    }
+
+    public function stock()
+    {
+        return $this->hasOne(Stock::class);
     }
 }
