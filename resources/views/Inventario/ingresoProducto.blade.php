@@ -31,18 +31,18 @@
         <div class="form-row">
           <div class="form-group col-md-3">
             <label>Tipo de Producto: </label>
-            <select  class="form-control">
+            <select name="product_type" class="form-control">
                 @foreach ($types as $type)
                     <option value='{{$type->id}}'>{{$type->type}}</option>
                 @endforeach
             </select>
           </div>
           <div class="form-group col-md-3">
-            <label for="inputCity">Estado: </label>
-            <select  class="form-control">
+            <label>Estado: </label>
+            <select name="status_product" class="form-control">
               @isset($statues)
               @foreach ($statues as $status)
-              <option value='{{$status->id}}'>{{$status->status}}</option>
+              <option value='{{$status->id}}'>{{ucfirst($status->status)}}</option>
           @endforeach
               @endisset
               
