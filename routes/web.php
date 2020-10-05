@@ -13,6 +13,8 @@
 |
 */
 
+
+
 Route::get('/', function () {
     return redirect()->route('home');
 });
@@ -25,11 +27,18 @@ Route::group(['middleware' => ['auth']], function () {
     
     Route::get('inventario','InventoryController@index')->name('inventario.index');
     Route::get('inventario/mantenimiento','InventoryController@mantenimiento_productos')->name('inventario.mantenimiento_productos');
+    Route::get('inventario/entrada_inventario','InventoryController@entrada_inventario')->name('inventario.entrada_inventario');
 
 
     //RUTAS PRODUCTOS
     Route::get('list_products','ProductController@listProducts')->name('listar_productos');
+    Route::get('get_product/{product}','ProductController@show_product');
     Route::resource('products','ProductController');
+
+
+
+
+    // Pruebas Vistas
     Route::get('modificar',function(){return view('Inventario.entradaProducto');});
 
 

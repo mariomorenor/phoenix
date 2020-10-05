@@ -63,7 +63,7 @@ class ProductController extends Controller
 
     public function show(Product $product)
     {
-        //
+        
     }
 
     public function edit(Product $product)
@@ -93,6 +93,11 @@ class ProductController extends Controller
         return response()->json([
             "rows"=>$products
         ]);
+    }
+
+    public function show_product(Product $product)
+    {
+        return response($product,200);
     }
 
 }

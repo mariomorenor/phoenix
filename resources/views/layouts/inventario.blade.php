@@ -20,7 +20,7 @@
                 <li><a id="link_crear_articulo" href="{{ route('products.create') }}" class="d-block text-white p-1 sub_menu_inventario">Crear artículo</a></li>
                 <li><a href="#" class="d-block text-white p-1 sub_menu_inventario">Seriar artículo</a></li>
                 <li><a id="link_listado_articulo" href="{{ route('products.index') }}" class="d-block text-white p-1 sub_menu_inventario">Listado artículos</a></li>
-                <li><a href="#" class="d-block text-white p-1 sub_menu_inventario">Entradas inventarios</a></li>
+                <li><a id="link_entrada_inventario" href="{{ route('inventario.entrada_inventario') }}" class="d-block text-white p-1 sub_menu_inventario">Entradas inventarios</a></li>
                 <li><a href="#" class="d-block text-white p-1 sub_menu_inventario">Salidas Inventario</a></li>
                 <li><a href="#" class="d-block text-white p-1 sub_menu_inventario">Transferencias almacenes </a></li>
                 <li><a href="#" class="d-block text-white p-1 sub_menu_inventario">Producción</a></li>
